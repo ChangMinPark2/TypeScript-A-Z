@@ -92,6 +92,9 @@ function throwError() : never {
     throw new Error('error');
 }
 
+function throws() : never {
+    throw new Error('test');
+}
 //불가능
 // const never = [] = []
 // never.push(1);

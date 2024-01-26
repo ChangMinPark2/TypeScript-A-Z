@@ -54,3 +54,12 @@ const cats: Record<CatName, CatInfo> = {
     miffy: {age: 10, breed: 'per'},
     boris: {age: 5, breed: 'con'}
 }
+
+//Return type;
+type T0 = ReturnType<() => string>
+
+function fn(str: string) {
+    return str;
+}
+
+const a : ReturnType<typeof fn> = 'hello';

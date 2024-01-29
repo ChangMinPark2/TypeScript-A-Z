@@ -8,7 +8,10 @@
     "moduleResolution": "Node", // 클래식과 노드가 있는데 노드 사용
     "esModuleInterop": true, // 모듈 호환해 사용하게 해준다.
     "lib": ["ESNext", "DOM"], //컴파일 과정에서 사용하는 라이브러리 지정
-    "strict": true //타입 스크립트 파일에 타입을 엄격하게 사용한다.
+    "strict": true, //타입 스크립트 파일에 타입을 엄격하게 사용한다.
 
+    "isolatedModules": true, //전역 스크립트 파일
+    "removeComments": false, // -> true 해주면 주석을 모두 제거해준다.
+    "forceConsistentCasingInFileNames": false, //true하면 대소문자를 구분해줌.
   }
 }

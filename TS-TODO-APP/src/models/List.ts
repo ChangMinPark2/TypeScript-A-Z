@@ -1,4 +1,5 @@
 import ListItem, {IListItem} from "./ListItem.ts";
+import storage from "../utils/storage.ts";
 
 interface IList {
     list: IListItem[];
@@ -31,6 +32,12 @@ export default class List implements IList {
             _checked: boolean
         }[]= JSON.parse(storedList);
 
+        storage.get<{
+            _id: string,
+            _item: string,
+            _checked: boolean
+        }[]>('myList')
+
         parsedList.forEach(itemObj => {
             const newListItem = new ListItem(
                 itemObj._id,
@@ -43,7 +50,8 @@ export default class List implements IList {
     }
 
     save(): void {
-        localStorage.setItem('myList', JSON.stringify(this._list));
+        storage.set('myList', this._list)
+        // localStorage.setItem('myList', JSON.stringify(this._list));
     }
 
     clearList() {
